@@ -1,25 +1,31 @@
-# Limye' Foundation
+# Limyè Foundation
 
-> Illuminating Pathways to Community Prosperity across Tuscaloosa and West Alabama.
+> Empowering Communities. Building Pathways to Independence across Alabama (Tuscaloosa & Huntsville).
 
-Limye' Foundation is a community-driven 501(c)(3) pending nonprofit organization committed to addressing interconnected health, housing, and social security needs. Through an integrated service framework—combining supportive housing, white-glove Non-Emergency Medical Transportation (NEMT), and Medically Tailored Meals (MTM)—Limye' Foundation empowers vulnerable individuals and families to break cycles of poverty and health disparity.
+Limyè Foundation is a 501(c)(3) pending nonprofit organization providing vulnerable populations with essential pillars for stability: **Housing**, **Healthcare Transportation**, and **Nutritional Support**. By addressing interconnected social determinants of health, Limyè Foundation empowers veterans, seniors, SSI recipients, at-risk youth, and low-income families to achieve self-sufficiency and improved quality of life.
 
 ## Key Information
-- **Legal Business Name**: Limye' Foundation
+- **Legal Business Name**: Limyè Foundation
 - **Associated Entity**: Porch Light Foundation
-- **Founder**: Quincy Ruffin
-- **Primary Location**: Tuscaloosa, Alabama (Serving West Alabama)
+- **Founder & Executive Director**: Quincy Ruffin
+- **Primary Locations**: Tuscaloosa & Huntsville, Alabama (Serving West Alabama & North Alabama)
 - **Status**: 501(c)(3) Nonprofit (Filing Pending Approval)
 - **Primary Domain**: https://limyefoundation.org
-- **Contact Email**: QRuffin@limyefoundation.org
-- **Contact Phone**: +1 (205) 393-7396
+- **Primary Email**: info@limyefoundation.org / QRuffin@limyefoundation.org
+- **24/7 Support Line & AI Assistant (Jamie)**: +1 (205) 300-9531
+- **Direct Phone**: +1 (205) 393-7396
 
 ## Primary Capabilities & Services
-- **Supportive Housing**: Safe, affordable housing linked with wrap-around case management, healthcare access, and life skills training.
-- **Non-Emergency Medical Transportation (NEMT)**: Reliable, white-glove transportation removing mobility barriers to healthcare, employment, and essential services.
-- **Medically Tailored Meals (MTM)**: Home delivery of customized nutrition for individuals managing chronic conditions (e.g., diabetes, hypertension) and food insecurity.
-- **Community Resource Integration**: Co-located partnership with New Heights Community Resource Center to provide wrap-around care coordination.
+- **Stable Housing Programs**: Safe, affordable supportive housing for veterans, seniors, SSI recipients, and unhoused individuals with wrap-around case management and life skills training.
+- **Healthcare Transportation (NEMT)**: White-glove transportation removing mobility barriers for medical appointments, therapy, education, and employment.
+- **Nutritional Support & Medically Tailored Meals**: Home-delivered customized nutrition and meal support for managing chronic conditions (e.g., diabetes, hypertension) and food insecurity.
+- **24/7 Automated Navigation (Jamie)**: Multilingual AI assistant available 24/7 at (205) 300-9531 to assist with intake, program info, and human support routing.
 
-## Core Documentation & Pages
-- [Main Landing Page](https://limyefoundation.org/index.html): Overview of Limye' Foundation vision, pillars, and partnership initiatives.
-- [Full AI Profile](https://limyefoundation.org/llms-full.txt): Detailed business profile, service specifications, target demographic, operational roadmap, and FAQs.
+## Site Structure & Key URLs
+- [Home Page](https://limyefoundation.org/): Overview of Limyè Foundation mission, programs, and community impact.
+- [Housing Programs](https://limyefoundation.org/housing): Supportive and independent living options and housing application intake.
+- [Transportation Services](https://limyefoundation.org/transportation): Non-emergency medical transportation and care access scheduling.
+- [Nutrition Services](https://limyefoundation.org/nutrition): Medically tailored meals and nutritional support details.
+- [About Limyè Foundation](https://limyefoundation.org/about): Foundation leadership, history, and organizational vision.
+- [Contact & Partnering](https://limyefoundation.org/contact): Contact forms, volunteer opportunities, and partnership inquiries.
+- [Full AI Business Profile](https://limyefoundation.org/llms-full.txt): Complete knowledge base, service specifications, target demographics, and FAQs.

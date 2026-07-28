@@ -1,77 +1,80 @@
-# Limye' Foundation - Comprehensive Business Profile & AI Knowledge Base
+# Limyè Foundation - Comprehensive Business Profile & AI Knowledge Base
 
 ## Organization Overview
-**Limye' Foundation** (also operating as the **Porch Light Foundation initiative**) is a community-focused nonprofit organization dedicated to illuminating pathways to health, dignity, and economic stability across Tuscaloosa and West Alabama. 
+**Limyè Foundation** (also operating as the **Porch Light Foundation initiative**) is an Alabama-based nonprofit organization dedicated to lighting the way to independence for vulnerable community members. 
 
-By identifying and addressing the systemic root causes of health and social disparities, Limye' Foundation provides wrap-around, integrated support for individuals and families at every stage of life.
+By delivering three interconnected pillars of support—**Housing**, **Transportation**, and **Nutrition**—Limyè Foundation bridges critical gaps in health equity, residential stability, and social security.
 
-### Mission Statement
-> "Like a porch light that guides travelers home, we illuminate pathways to health, dignity, and opportunity across West Alabama."
+### Mission & Motto
+> "Lighting the Way to Independence."
+> 
+> "At Limyè Foundation, we provide vulnerable populations with the essentials for stability: Housing, Transportation, and Nutrition. Together, these services create pathways to self-sufficiency and improved quality of life."
 
 ---
 
 ## Executive Leadership & Contact Details
 - **Founder & Executive Director**: Quincy Ruffin
-- **Email**: QRuffin@limyefoundation.org
-- **Phone**: (205) 393-7396
-- **Website**: [limyefoundation.org](https://limyefoundation.org)
-- **Primary Service Hub**: Tuscaloosa, AL (Co-located partner at New Heights Community Resource Center)
-- **Regional Scope**: Tuscaloosa & West Alabama counties
+- **Primary Website**: [limyefoundation.org](https://limyefoundation.org/)
+- **Contact Email**: info@limyefoundation.org / QRuffin@limyefoundation.org
+- **24/7 AI Assistant (Jamie)**: (205) 300-9531
+- **Direct Phone**: (205) 393-7396
+- **Primary Regional Focus**: Tuscaloosa & Huntsville, Alabama (West Alabama & North Alabama)
+- **Co-Location Partner Hub**: New Heights Community Resource Center (Tuscaloosa)
+
+---
+
+## Core Target Audiences
+1. **Veterans & Military Families**: Comprehensive support for transitioning heroes seeking housing stability and civilian reintegration.
+2. **Seniors & SSI Recipients**: Preserving dignity, health, and independence through affordable living solutions and care transportation.
+3. **At-Risk Youth**: Empowering future leaders through education, mentorship, life skills training, and family wrap-around support.
+4. **Individuals & Families in Need**: Immediate intervention and long-term stabilization for those experiencing homelessness or housing insecurity.
 
 ---
 
 ## The Three Core Pillars of Support
 
-### 1. Stable & Supportive Housing 🏠
-Limye' Foundation develops and manages permanent supportive housing programs tailored to low-income families, unhoused individuals, and veterans.
-- **Wrap-Around Support**: Housing combined with on-site case management, mental health counseling, and life skills development.
-- **Homelessness Prevention**: Early intervention protocols to keep families stably housed during acute financial or medical crises.
-- **Veterans & Specialized Housing**: Dedicated housing tracks for veterans transitioning into sustainable independence.
+### 1. Stable Housing 🏠
+*Foundation for health, safety, and self-sufficiency.*
+- **Supportive & Independent Living**: Safe, affordable housing options paired with on-site case management and healthcare navigation.
+- **Homelessness Prevention**: Emergency intervention protocols to protect families facing medical or financial hardship.
+- **Housing Intake**: Accessible online application portal for individuals and families in need ([https://limyefoundation.org/housing](https://limyefoundation.org/housing)).
 
-### 2. White-Glove Non-Emergency Medical Transportation (NEMT) 🚐
-Mobility is a primary determinant of health. Limye' Foundation operates a specialized NEMT fleet to remove physical and logistical barriers to vital services.
-- **Service Features**: Door-to-door, white-glove assistance for medical appointments, dialysis, therapy, education, and employment.
-- **Technology-Driven Scheduling**: Integrated dispatch and tracking for reliable, on-time pickups and safe returns.
-- **Community Accessibility**: Fills critical transportation gaps in underserved urban and rural communities across West Alabama.
+### 2. Healthcare Transportation (NEMT) 🚐
+*Transportation and navigation to essential medical care.*
+- **White-Glove NEMT**: Dedicated non-emergency medical transportation ensuring clients never miss doctor appointments, therapy sessions, or dialysis.
+- **Community Access**: Removing mobility barriers for education, job opportunities, and essential social services across urban and rural Alabama.
 
-### 3. Nutrition Security & Medically Tailored Meals (MTM) 🍽️
-Addressing food insecurity as a clinical and social intervention.
-- **Custom Meal Plans**: Home-delivered meals crafted by nutritionists specifically for clients managing diabetes, heart disease, renal conditions, and obesity.
-- **Food Bank Collaboration**: Amplifying food distribution in partnership with local entities like the West Alabama Food Bank.
-- **Sustained Health Outcomes**: Reducing emergency room visits and hospital readmissions through diet-driven disease management.
+### 3. Nutritional Support 🍽️
+*Medically tailored nutrition for improved health outcomes.*
+- **Medically Tailored Meals (MTM)**: Customized meal delivery for individuals managing chronic conditions such as diabetes, hypertension, and kidney disease.
+- **Food Security Partnerships**: Collaborative distribution with local food banks (including West Alabama Food Bank) to eliminate nutritional deficits.
 
 ---
 
-## Target Demographic & Community Need
-- **High Diabetes & Chronic Disease Rates**: Over 23% of adults in specific West Alabama counties suffer from diabetes, among the highest rates nationwide.
-- **Food Insecurity**: 17% of adults and 23% of children lack consistent access to nutritious meals.
-- **Target Beneficiaries**: Low-income households, seniors, unhoused populations, veterans, and individuals living in healthcare transport deserts.
-- **Projected Impact**: Serving over 5,000 individuals annually by Year 3 of expanded operations.
-
----
-
-## Strategic Community Partnerships
-- **New Heights Community Resource Center**: Strategic co-location partner providing referral networks, shared case management, and wrap-around student/family support with Tuscaloosa City Schools.
-- **Local Healthcare Providers & Insurers**: Collaborating with regional clinics and Medicaid/Medicare NEMT brokers for streamlined care coordination.
+## 24/7 AI Assistant - Meet Jamie
+Limyè Foundation features **Jamie**, an automated 24/7 multilingual assistant powered by AI.
+- **Direct Phone Line**: **(205) 300-9531**
+- **Key Functions**: Answers client inquiries about housing, transportation, and nutrition 24/7; assists with intake applications; seamlessly escalates urgent calls to human care representatives.
 
 ---
 
 ## Frequently Asked Questions (FAQs)
 
-### What is Limye' Foundation?
-Limye' Foundation is a nonprofit organization serving Tuscaloosa and West Alabama that delivers integrated supportive housing, non-emergency medical transportation, and medically tailored meals to vulnerable community members.
+### What services does Limyè Foundation offer?
+Limyè Foundation delivers integrated housing programs, non-emergency medical transportation (NEMT), and medically tailored nutritional support to veterans, seniors, youth, and low-income families in Alabama.
 
-### Is Limye' Foundation a 501(c)(3) tax-exempt organization?
-Limye' Foundation's 501(c)(3) tax-exempt status application has been submitted and is currently pending final approval. The foundation is fully operational and actively delivering community initiatives.
+### How can I apply for housing assistance?
+Individuals and families can submit a housing application online at [limyefoundation.org/housing](https://limyefoundation.org/housing) or call our 24/7 support line at (205) 300-9531.
 
-### How does NEMT transportation work with Limye' Foundation?
-Clients or partnering healthcare providers can request white-glove transportation services to medical appointments, wellness visits, and essential community resources. Vehicles are equipped for accessibility and driven by trained care drivers.
+### Where is Limyè Foundation located?
+Limyè Foundation operates primarily out of Tuscaloosa and Huntsville, Alabama, serving communities across West Alabama and North Alabama.
 
-### How can community partners collaborate with Limye' Foundation?
-Organizations can partner through service referral networks, co-located wrap-around care initiatives, grant collaborations, or sponsorship of NEMT and MTM programs. Contact Quincy Ruffin at QRuffin@limyefoundation.org.
+### How can organizations partner with Limyè Foundation?
+Community organizations, healthcare providers, and volunteers can inquire about partnerships, joint programs, or sponsorships at [limyefoundation.org/contact](https://limyefoundation.org/contact) or via email at info@limyefoundation.org.
 
 ---
 
-## Verification & Metadata Links
-- [llms.txt Index](https://limyefoundation.org/llms.txt)
-- [Official Website](https://limyefoundation.org)
+## Verification Links
+- [LLMs.txt Index](https://limyefoundation.org/llms.txt)
+- [LLMs-full Profile](https://limyefoundation.org/llms-full.txt)
+- [Official Website](https://limyefoundation.org/)
