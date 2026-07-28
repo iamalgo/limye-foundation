@@ -1,0 +1,285 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Contact Us - Limyè Foundation</title>
+        <meta name="description" content="Get in touch with Limyè Foundation. Apply for services, volunteer, donate, or partner with us to serve Alabama's vulnerable populations.">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
+        <link rel="alternate" type="text/markdown" title="LLMs.txt" href="/llms.txt">
+        <link rel="alternate" type="text/markdown" title="LLMs-full.txt" href="/llms-full.txt">
+    </head>
+    <body style="background-color: #faf7f2;">
+        <!-- Navigation -->
+        <nav class="bg-white shadow-lg sticky top-0 z-50">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="flex justify-between items-center py-4">
+                    <div class="flex items-center">
+                        <img src="/static/logo.png" alt="Limyè Foundation" class="h-12 w-12 mr-3 limye-logo" onerror="this.style.display='none'">
+                        <div>
+                            <h1 class="text-xl font-bold text-gray-800">Limyè Foundation</h1>
+                            <p class="text-sm text-gray-600">Lighting the Way to Independence</p>
+                        </div>
+                    </div>
+                    <div class="hidden md:flex space-x-8">
+                        <a href="/" class="text-gray-700 hover:text-orange-600">Home</a>
+                        <a href="/housing" class="text-gray-700 hover:text-orange-600">Housing</a>
+                        <a href="/transportation" class="text-gray-700 hover:text-orange-600">Transportation</a>
+                        <a href="/nutrition" class="text-gray-700 hover:text-orange-600">Nutrition</a>
+                        <a href="/about" class="text-gray-700 hover:text-orange-600">About</a>
+                        <a href="/contact" class="text-orange-600 font-semibold">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Header -->
+        <div class="bg-gradient-to-r from-orange-600 to-red-600 text-white py-16">
+            <div class="max-w-7xl mx-auto px-4 text-center">
+                <h1 class="text-4xl font-bold mb-4">Let's Connect</h1>
+                <p class="text-xl text-orange-100">Whether you're applying for services, offering support, or looking to partner with us</p>
+            </div>
+        </div>
+
+        <!-- Contact Form & Info -->
+        <div class="py-16 bg-white">
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="grid lg:grid-cols-3 gap-12">
+                    <!-- Contact Form -->
+                    <div class="lg:col-span-2">
+                        <h2 class="text-3xl font-bold text-gray-800 mb-8">Send Us a Message</h2>
+                        <form id="contact-form" class="space-y-6">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Name *</label>
+                                    <input type="text" name="name" required 
+                                           class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Email *</label>
+                                    <input type="email" name="email" required 
+                                           class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Phone</label>
+                                <input type="tel" name="phone" 
+                                       class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500">
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">I'm interested in: *</label>
+                                <select name="interest" required 
+                                        class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500">
+                                    <option value="">Please select</option>
+                                    <option value="housing-application">Applying for Housing</option>
+                                    <option value="transportation-services">Transportation Services</option>
+                                    <option value="nutrition-programs">Nutrition Programs</option>
+                                    <option value="volunteering">Volunteering</option>
+                                    <option value="donations">Making a Donation</option>
+                                    <option value="property-partnership">Property Owner Partnership</option>
+                                    <option value="driver-opportunities">Driver Opportunities</option>
+                                    <option value="general-partnership">General Partnership</option>
+                                    <option value="media-inquiry">Media Inquiry</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Message *</label>
+                                <textarea name="message" rows="6" required 
+                                          placeholder="Please tell us how we can help you or how you'd like to get involved..."
+                                          class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"></textarea>
+                            </div>
+
+                            <button type="submit" 
+                                    class="w-full bg-orange-600 text-white py-3 px-6 rounded-md font-semibold hover:bg-orange-700 transition duration-300">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div>
+                        <h2 class="text-2xl font-bold text-gray-800 mb-6">Contact Information</h2>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                    <i class="fas fa-envelope text-orange-600"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-gray-800 mb-1">Email</h3>
+                                    <p class="text-gray-600">info@limyefoundation.org</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                    <i class="fas fa-phone text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-gray-800 mb-1">Phone - Available 24/7</h3>
+                                    <p class="text-gray-600 mb-1">(205) 300-9531</p>
+                                    <p class="text-sm text-green-600 font-medium mb-1">
+                                        <i class="fas fa-clock mr-1"></i>Call anytime - Our AI assistant Jamie is always ready to help
+                                    </p>
+                                    <p class="text-xs text-gray-500">
+                                        Get instant information, apply for services, or connect with our human team
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                    <i class="fas fa-map-marker-alt text-green-600"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-gray-800 mb-1">Service Areas</h3>
+                                    <p class="text-gray-600">Tuscaloosa & Huntsville, Alabama</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                    <i class="fas fa-clock text-purple-600"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-gray-800 mb-1">Response Time</h3>
+                                    <p class="text-gray-600">We respond within 1 business day</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Quick Links -->
+                        <div class="mt-8 p-6 bg-gray-50 rounded-lg">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-4">Quick Actions</h3>
+                            <div class="space-y-3">
+                                <a href="/housing" class="flex items-center text-orange-600 hover:text-orange-700">
+                                    <i class="fas fa-home mr-2"></i>
+                                    <span>Apply for Housing</span>
+                                </a>
+                                <a href="mailto:partnerships@limyefoundation.org" class="flex items-center text-blue-600 hover:text-blue-700">
+                                    <i class="fas fa-handshake mr-2"></i>
+                                    <span>Partnership Inquiries</span>
+                                </a>
+                                <a href="mailto:volunteer@limyefoundation.org" class="flex items-center text-green-600 hover:text-green-700">
+                                    <i class="fas fa-heart mr-2"></i>
+                                    <span>Volunteer Opportunities</span>
+                                </a>
+                                <a href="mailto:donations@limyefoundation.org" class="flex items-center text-purple-600 hover:text-purple-700">
+                                    <i class="fas fa-gift mr-2"></i>
+                                    <span>Make a Donation</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Map Section -->
+        <div class="py-16 bg-gray-50">
+            <div class="max-w-6xl mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Our Service Areas</h2>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Tuscaloosa -->
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-map-marker-alt text-orange-600"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800">Tuscaloosa</h3>
+                        </div>
+                        <ul class="space-y-2 text-gray-700 mb-4">
+                            <li>• Primary service area for initial housing programs</li>
+                            <li>• VA Medical Center transportation hub</li>
+                            <li>• Nutrition program pilot location (Late 2025)</li>
+                            <li>• Close proximity to DCH Regional Medical Center</li>
+                        </ul>
+                        <p class="text-sm text-gray-600">
+                            <strong>Timeline:</strong> Housing programs launching Fall 2025
+                        </p>
+                    </div>
+
+                    <!-- Huntsville -->
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-rocket text-blue-600"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800">Huntsville</h3>
+                        </div>
+                        <ul class="space-y-2 text-gray-700 mb-4">
+                            <li>• Priority launch market for independent living homes</li>
+                            <li>• Favorable zoning for housing development</li>
+                            <li>• Multiple 3-4 bedroom properties under review</li>
+                            <li>• Focus on accessibility and veteran services</li>
+                        </ul>
+                        <p class="text-sm text-gray-600">
+                            <strong>Timeline:</strong> Housing Phase 1 launching Summer 2025
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="mt-8 text-center">
+                    <p class="text-gray-600 text-lg">
+                        Serving the greater North Alabama and West Alabama regions with plans for expansion 
+                        to Birmingham metro area in Year 2.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="bg-gray-800 text-white py-12">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="grid md:grid-cols-4 gap-8">
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Limyè Foundation</h3>
+                        <p class="text-gray-300 mb-4">Empowering vulnerable populations through comprehensive support services.</p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-facebook text-xl"></i></a>
+                            <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-twitter text-xl"></i></a>
+                            <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-linkedin text-xl"></i></a>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Services</h4>
+                        <ul class="space-y-2">
+                            <li><a href="/housing" class="text-gray-300 hover:text-white">Housing Programs</a></li>
+                            <li><a href="/transportation" class="text-gray-300 hover:text-white">Transportation</a></li>
+                            <li><a href="/nutrition" class="text-gray-300 hover:text-white">Nutrition Services</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Get Involved</h4>
+                        <ul class="space-y-2">
+                            <li><a href="/contact" class="text-gray-300 hover:text-white">Volunteer</a></li>
+                            <li><a href="/contact" class="text-gray-300 hover:text-white">Donate</a></li>
+                            <li><a href="/contact" class="text-gray-300 hover:text-white">Partner With Us</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Contact Info</h4>
+                        <div class="space-y-2 text-gray-300">
+                            <p><i class="fas fa-envelope mr-2"></i>info@limyefoundation.org</p>
+                            <p><i class="fas fa-phone mr-2"></i>(205) 300-9531 - Available 24/7</p>
+                            <p><i class="fas fa-map-marker-alt mr-2"></i>Tuscaloosa & Huntsville, AL</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
+                    <p>&copy; 2024 Limyè Foundation. All rights reserved. | Building pathways to independence.</p>
+                </div>
+            </div>
+        </footer>
+
+        <script src="/static/app.js"></script>
+    </body>
+    </html>
+  

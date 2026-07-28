@@ -1,0 +1,384 @@
+/* Limyè Foundation Website Styles */
+
+/* Custom CSS to enhance TailwindCSS */
+
+/* Logo and branding - matching the lantern theme */
+.logo-glow {
+    filter: drop-shadow(0 0 8px rgba(218, 165, 32, 0.4));
+}
+
+.limye-logo {
+    transition: transform 0.3s ease;
+}
+
+.limye-logo:hover {
+    transform: scale(1.05);
+}
+
+/* Hero section animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* Custom button styles */
+.btn-primary {
+    @apply bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-700 transition-all duration-300 transform hover:scale-105;
+}
+
+.btn-secondary {
+    @apply bg-white text-orange-600 border-2 border-orange-600 px-6 py-3 rounded-lg font-semibold hover:bg-orange-50 transition-all duration-300;
+}
+
+.btn-outline {
+    @apply bg-transparent border-2 border-current px-6 py-3 rounded-lg font-semibold hover:bg-current hover:text-white transition-all duration-300;
+}
+
+/* Card hover effects */
+.card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+}
+
+/* Form styles */
+.form-input {
+    @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200;
+}
+
+.form-input:focus {
+    box-shadow: 0 0 0 3px rgba(251, 146, 60, 0.1);
+}
+
+.form-label {
+    @apply block text-sm font-medium text-gray-700 mb-2;
+}
+
+.form-error {
+    @apply text-red-600 text-sm mt-1;
+}
+
+.form-success {
+    @apply text-green-600 text-sm mt-1;
+}
+
+/* Navigation enhancements */
+.nav-link {
+    @apply relative transition-colors duration-200;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #ea580c;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* Service icons with hover effects */
+.service-icon {
+    @apply transition-all duration-300 group-hover:scale-110 group-hover:rotate-3;
+}
+
+/* Timeline styles */
+.timeline-item {
+    @apply relative pl-8 pb-8;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom, #ea580c, #f97316);
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    left: -4px;
+    top: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ea580c;
+}
+
+/* Accessibility improvements */
+.skip-link {
+    @apply absolute -top-10 left-4 bg-orange-600 text-white px-4 py-2 rounded focus:top-4 z-50 transition-all duration-200;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .bg-gray-50 {
+        background-color: #ffffff;
+    }
+    
+    .text-gray-600 {
+        color: #000000;
+    }
+    
+    .border-gray-300 {
+        border-color: #000000;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Dark mode support (future enhancement) */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-primary: #1f2937;
+        --text-primary: #f9fafb;
+        --accent-color: #f97316;
+    }
+}
+
+/* Print styles */
+@media print {
+    .no-print,
+    nav,
+    footer,
+    .print:hidden {
+        display: none !important;
+    }
+    
+    body {
+        font-size: 12pt;
+        line-height: 1.4;
+        color: black;
+        background: white;
+    }
+    
+    h1, h2, h3 {
+        color: black;
+        page-break-after: avoid;
+    }
+    
+    .page-break {
+        page-break-before: always;
+    }
+    
+    a[href^="http"]:after {
+        content: " (" attr(href) ")";
+        font-size: 10pt;
+        color: #666;
+    }
+}
+
+/* Mobile menu animations */
+.mobile-menu-enter {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.mobile-menu-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.mobile-menu-exit {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.mobile-menu-exit-active {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+/* Loading states */
+.loading {
+    position: relative;
+    pointer-events: none;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid transparent;
+    border-top: 2px solid currentColor;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Notification styles */
+.notification {
+    animation: slideInRight 0.3s ease-out;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* Focus indicators */
+*:focus {
+    outline: 2px solid #ea580c;
+    outline-offset: 2px;
+}
+
+/* Image optimization */
+img {
+    height: auto;
+    max-width: 100%;
+}
+
+.img-responsive {
+    @apply w-full h-auto object-cover;
+}
+
+/* Grid layouts */
+.grid-auto-fit {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.grid-auto-fill {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Utility classes */
+.text-balance {
+    text-wrap: balance;
+}
+
+.text-pretty {
+    text-wrap: pretty;
+}
+
+.container-narrow {
+    @apply max-w-4xl mx-auto px-4;
+}
+
+.container-wide {
+    @apply max-w-7xl mx-auto px-4;
+}
+
+/* Limyè brand colors - inspired by the logo */
+:root {
+    --limye-cream: #e8d5c4;
+    --limye-beige: #d4c4b0;
+    --limye-brown: #8b4513;
+    --limye-brown-dark: #654321;
+    --limye-gold: #daa520;
+    --limye-gold-light: #f4d03f;
+    --limye-orange: #ff8c00;
+    --limye-orange-light: #ffa500;
+    --limye-warm-white: #faf7f2;
+    --limye-text-dark: #2c1810;
+}
+
+/* Custom gradient backgrounds - matching logo palette */
+.bg-gradient-limye {
+    background: linear-gradient(135deg, var(--limye-gold) 0%, var(--limye-orange) 100%);
+}
+
+.bg-gradient-hero {
+    background: linear-gradient(135deg, var(--limye-cream) 0%, var(--limye-warm-white) 100%);
+}
+
+.bg-gradient-warm {
+    background: linear-gradient(135deg, var(--limye-beige) 0%, var(--limye-cream) 100%);
+}
+
+/* Responsive images with aspect ratios */
+.aspect-ratio-16-9 {
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.aspect-ratio-4-3 {
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+.aspect-ratio-square {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+/* Content spacing */
+.content-spacing > * + * {
+    margin-top: 1.5rem;
+}
+
+.content-spacing-sm > * + * {
+    margin-top: 1rem;
+}
+
+.content-spacing-lg > * + * {
+    margin-top: 2rem;
+}
+
+/* Border utilities */
+.border-gradient {
+    border: 2px solid transparent;
+    background: linear-gradient(white, white) padding-box,
+                linear-gradient(45deg, var(--limye-orange), var(--limye-orange-light)) border-box;
+}

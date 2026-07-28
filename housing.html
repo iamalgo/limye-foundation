@@ -1,0 +1,299 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Independent Living Homes - Limyè Foundation</title>
+        <meta name="description" content="Affordable, stable housing for veterans, seniors, and individuals in recovery. Independent living homes with dignity and community support.">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
+        <link href="/static/styles.css" rel="stylesheet">
+        <link rel="alternate" type="text/markdown" title="LLMs.txt" href="/llms.txt">
+        <link rel="alternate" type="text/markdown" title="LLMs-full.txt" href="/llms-full.txt">
+    </head>
+    <body style="background-color: #faf7f2;">
+        <!-- Navigation (Same as homepage) -->
+        <nav class="bg-white shadow-lg sticky top-0 z-50">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="flex justify-between items-center py-4">
+                    <div class="flex items-center">
+                        <img src="/static/logo.png" alt="Limyè Foundation" class="h-12 w-12 mr-3 limye-logo" onerror="this.style.display='none'">
+                        <div>
+                            <h1 class="text-xl font-bold text-gray-800">Limyè Foundation</h1>
+                            <p class="text-sm text-gray-600">Lighting the Way to Independence</p>
+                        </div>
+                    </div>
+                    <div class="hidden md:flex space-x-8">
+                        <a href="/" class="text-gray-700 hover:text-orange-600">Home</a>
+                        <a href="/housing" class="font-semibold" style="color: #8b4513;">Housing</a>
+                        <a href="/transportation" class="text-gray-700 hover:text-orange-600">Transportation</a>
+                        <a href="/nutrition" class="text-gray-700 hover:text-orange-600">Nutrition</a>
+                        <a href="/about" class="text-gray-700 hover:text-orange-600">About</a>
+                        <a href="/contact" class="text-gray-700 hover:text-orange-600">Contact</a>
+                    </div>
+                    <div class="md:hidden">
+                        <button id="mobile-menu-btn" class="text-gray-700">
+                            <i class="fas fa-bars text-xl"></i>
+                        </button>
+                    </div>
+                </div>
+                <div id="mobile-menu" class="md:hidden hidden pb-4">
+                    <a href="/" class="block py-2 text-gray-700">Home</a>
+                    <a href="/housing" class="block py-2 text-orange-600 font-semibold">Housing</a>
+                    <a href="/transportation" class="block py-2 text-gray-700">Transportation</a>
+                    <a href="/nutrition" class="block py-2 text-gray-700">Nutrition</a>
+                    <a href="/about" class="block py-2 text-gray-700">About</a>
+                    <a href="/contact" class="block py-2 text-gray-700">Contact</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Header -->
+        <div class="bg-gradient-to-r from-orange-600 to-red-600 text-white py-16">
+            <div class="max-w-7xl mx-auto px-4 text-center">
+                <h1 class="text-4xl font-bold mb-4">Independent Living Homes</h1>
+                <p class="text-xl text-orange-100">Stability, Dignity, Community</p>
+            </div>
+        </div>
+
+        <!-- Program Description -->
+        <div class="py-12 bg-white">
+            <div class="max-w-4xl mx-auto px-4">
+                <p class="text-lg text-gray-700 leading-relaxed mb-8">
+                    Limyè Independent Living Homes are designed for veterans, seniors, and individuals in recovery who need 
+                    affordable, stable housing. Our homes provide independence within a supportive community, without the high 
+                    costs of assisted living or the restrictions of traditional shelters.
+                </p>
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    We follow a tenant-focused model, where residents sign leases, share costs fairly, and live by a clear set 
+                    of community rules that ensure respect and safety for all.
+                </p>
+            </div>
+        </div>
+
+        <!-- Tenant Intake Form -->
+        <div class="py-12 bg-gray-50">
+            <div class="max-w-2xl mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Tenant Intake Form</h2>
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <form id="housing-intake-form" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
+                                <input type="text" name="fullName" required 
+                                       class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Phone Number *</label>
+                                <input type="tel" name="phone" required 
+                                       class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
+                            <input type="email" name="email" required 
+                                   class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Housing Need *</label>
+                            <select name="housingNeed" required 
+                                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500">
+                                <option value="">Select your situation</option>
+                                <option value="veteran">Veteran</option>
+                                <option value="ssi-senior">SSI Senior</option>
+                                <option value="sober-living">Sober Living</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Desired Move-in Date</label>
+                            <input type="date" name="moveInDate" 
+                                   class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Income Source *</label>
+                            <select name="incomeSource" required 
+                                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500">
+                                <option value="">Select income source</option>
+                                <option value="ssi">SSI</option>
+                                <option value="disability">Disability</option>
+                                <option value="employment">Employment</option>
+                                <option value="veterans-benefits">Veterans Benefits</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Accessibility Needs</label>
+                            <div class="space-y-2">
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="accessibility" value="wheelchair-access" class="mr-2">
+                                    <span>Wheelchair Access</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="accessibility" value="first-floor-bedroom" class="mr-2">
+                                    <span>First Floor Bedroom</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="accessibility" value="grab-bars" class="mr-2">
+                                    <span>Bathroom Grab Bars</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="accessibility" value="none" class="mr-2">
+                                    <span>No special needs</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Emergency Contact Name</label>
+                            <input type="text" name="emergencyName" 
+                                   class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Emergency Contact Phone</label>
+                            <input type="tel" name="emergencyPhone" 
+                                   class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500">
+                        </div>
+
+                        <div class="bg-orange-50 p-4 rounded-md">
+                            <p class="text-sm text-gray-700">
+                                <strong>Note:</strong> Limyè Independent Living Homes are unlicensed residences under Alabama 
+                                landlord-tenant law. Residents remain independent, with access to community resources, 
+                                case management, and transportation as needed.
+                            </p>
+                        </div>
+
+                        <button type="submit" 
+                                class="w-full bg-orange-600 text-white py-3 px-6 rounded-md font-semibold hover:bg-orange-700 transition duration-300">
+                            Submit Application
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Available Homes -->
+        <div class="py-12 bg-white">
+            <div class="max-w-6xl mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Available & Upcoming Homes</h2>
+                <p class="text-center text-gray-600 mb-12">
+                    We are beginning in Huntsville, Alabama, where zoning makes independent living homes easier to establish quickly.
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Huntsville Phase 1 -->
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">
+                            <i class="fas fa-star text-yellow-500 mr-2"></i>Huntsville Phase 1 Homes
+                        </h3>
+                        <p class="text-green-600 font-semibold mb-2">Coming Summer 2025</p>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>• Multiple 3–4 bedroom single-family homes under review</li>
+                            <li>• Focus on first-floor accessibility and safe neighborhoods</li>
+                            <li>• Shared costs model with individual lease agreements</li>
+                            <li>• Target tenants: Veterans, SSI recipients, sober living</li>
+                        </ul>
+                    </div>
+
+                    <!-- Tuscaloosa Expansion -->
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">
+                            <i class="fas fa-calendar text-blue-500 mr-2"></i>Tuscaloosa Expansion
+                        </h3>
+                        <p class="text-blue-600 font-semibold mb-2">Fall 2025</p>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>• Multiple 3–4 bedroom single-family homes identified</li>
+                            <li>• Focus on accessibility and proximity to medical facilities</li>
+                            <li>• Affordable rent structure with shared cost model</li>
+                            <li>• Professional property management partnerships established</li>
+                            <li>• Priority placement for veterans and seniors</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="py-12 bg-gray-50">
+            <div class="max-w-4xl mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Frequently Asked Questions</h2>
+                <div class="space-y-6">
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">How much is rent?</h3>
+                        <p class="text-gray-700">Rent is split fairly among tenants and may be offset by vouchers or assistance (HUD-VASH, SSI compliance).</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">What services are included?</h3>
+                        <p class="text-gray-700">Residents maintain independence but may receive reminders, access to social activities, and support with community transportation.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Are there rules?</h3>
+                        <p class="text-gray-700">Yes. We enforce clear house rules (no violence, no overnight guests, shared chores, quiet hours) to maintain harmony and safety.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Why Huntsville first?</h3>
+                        <p class="text-gray-700">Huntsville's zoning and housing market make it easier to launch independent living communities quickly while keeping rents affordable.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Will Tuscaloosa still happen?</h3>
+                        <p class="text-gray-700">Yes, Tuscaloosa homes are secured for Fall 2025. Huntsville is simply our faster launch market.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer (Same as homepage) -->
+        <footer class="bg-gray-800 text-white py-12">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="grid md:grid-cols-4 gap-8">
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Limyè Foundation</h3>
+                        <p class="text-gray-300 mb-4">Empowering vulnerable populations through comprehensive support services.</p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-facebook text-xl"></i></a>
+                            <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-twitter text-xl"></i></a>
+                            <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-linkedin text-xl"></i></a>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Services</h4>
+                        <ul class="space-y-2">
+                            <li><a href="/housing" class="text-gray-300 hover:text-white">Housing Programs</a></li>
+                            <li><a href="/transportation" class="text-gray-300 hover:text-white">Transportation</a></li>
+                            <li><a href="/nutrition" class="text-gray-300 hover:text-white">Nutrition Services</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Get Involved</h4>
+                        <ul class="space-y-2">
+                            <li><a href="/contact" class="text-gray-300 hover:text-white">Volunteer</a></li>
+                            <li><a href="/contact" class="text-gray-300 hover:text-white">Donate</a></li>
+                            <li><a href="/contact" class="text-gray-300 hover:text-white">Partner With Us</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Contact Info</h4>
+                        <div class="space-y-2 text-gray-300">
+                            <p><i class="fas fa-envelope mr-2"></i>info@limyefoundation.org</p>
+                            <p><i class="fas fa-phone mr-2"></i>(205) 300-9531 - Available 24/7</p>
+                            <p><i class="fas fa-map-marker-alt mr-2"></i>Tuscaloosa & Huntsville, AL</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
+                    <p>&copy; 2024 Limyè Foundation. All rights reserved. | Building pathways to independence.</p>
+                </div>
+            </div>
+        </footer>
+
+        <script src="/static/app.js"></script>
+    </body>
+    </html>
+  
