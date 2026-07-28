@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limye' Foundation - Partnership Pitch Deck</title>
+    <link rel="alternate" type="text/markdown" title="LLMs.txt" href="/llms.txt">
+    <link rel="alternate" type="text/markdown" title="LLMs-full.txt" href="/llms-full.txt">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .slide {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            box-sizing: border-box;
+            position: relative;
+        }
+        
+        .slide-content {
+            max-width: 800px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        .slide h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 700;
+        }
+        
+        .slide h2 {
+            color: #34495e;
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .slide h3 {
+            color: #2980b9;
+            font-size: 1.5em;
+            margin: 20px 0 15px 0;
+            font-weight: 600;
+        }
+        
+        .logo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .logo img {
+            max-width: 200px;
+            height: auto;
+        }
+        
+        .foundation-name {
+            font-size: 3em;
+            font-weight: bold;
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .tagline {
+            font-size: 1.3em;
+            color: #7f8c8d;
+            text-align: center;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+        
+        .pillars {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .pillar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transform: translateY(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .pillar:hover {
+            transform: translateY(-5px);
+        }
+        
+        .pillar-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .pillar h3 {
+            color: white;
+            margin: 0 0 15px 0;
+        }
+        
+        .alignment-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .alignment-card {
+            background: #f8f9fa;
+            border-left: 5px solid #3498db;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .alignment-card h4 {
+            color: #2c3e50;
+            margin-top: 0;
+            font-size: 1.3em;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .stat {
+            text-align: center;
+            background: #ecf0f1;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #e74c3c;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            color: #7f8c8d;
+            font-size: 1.1em;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 40px;
+            border-radius: 20px;
+            margin: 30px 0;
+        }
+        
+        .cta-button {
+            background: white;
+            color: #667eea;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            margin: 20px 10px;
+            display: inline-block;
+            text-decoration: none;
+        }
+        
+        .cta-button:hover {
+            transform: scale(1.05);
+        }
+        
+        .contact-info {
+            background: #34495e;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+        
+        .contact-info h3 {
+            color: white;
+            margin-top: 0;
+        }
+        
+        .nav-dots {
+            position: fixed;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+        }
+        
+        .nav-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            margin: 10px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            padding: 0;
+        }
+        
+        .nav-dot.active {
+            background: #3498db;
+            transform: scale(1.2);
+        }
+        
+        .slide {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .slide.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+                    @media (max-width: 768px) {
+            .slide-content {
+                padding: 20px;
+            }
+            
+            .foundation-name {
+                font-size: 2em;
+            }
+            
+            .alignment-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pillars {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-dots {
+                position: fixed;
+                bottom: 20px;
+                right: 50%;
+                transform: translateX(50%);
+                top: auto;
+                display: flex;
+                flex-direction: row;
+                background: rgba(0,0,0,0.7);
+                padding: 10px;
+                border-radius: 25px;
+            }
+            
+            .nav-dot {
+                margin: 0 5px;
+                width: 8px;
+                height: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-dots">
+        <button class="nav-dot active" onclick="scrollToSlide(0)" aria-label="Go to slide 1"></button>
+        <button class="nav-dot" onclick="scrollToSlide(1)" aria-label="Go to slide 2"></button>
+        <button class="nav-dot" onclick="scrollToSlide(2)" aria-label="Go to slide 3"></button>
+        <button class="nav-dot" onclick="scrollToSlide(3)" aria-label="Go to slide 4"></button>
+        <button class="nav-dot" onclick="scrollToSlide(4)" aria-label="Go to slide 5"></button>
+        <button class="nav-dot" onclick="scrollToSlide(5)" aria-label="Go to slide 6"></button>
+        <button class="nav-dot" onclick="scrollToSlide(6)" aria-label="Go to slide 7"></button>
+    </div>
+
+    <!-- Slide 1: Title -->
+    <div class="slide" id="slide-0">
+        <div class="slide-content">
+            <div class="logo">
+                <div style="width: 200px; height: 200px; margin: 0 auto; background: linear-gradient(135deg, #d4c4a8, #c4b49a); border-radius: 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 15px 35px rgba(0,0,0,0.2); position: relative; border: 3px solid #b8a082;" role="img" aria-label="Limye' Foundation logo">
+                    <div style="font-size: 2.5em; color: #8b4513; margin-bottom: 8px; font-weight: bold; font-family: serif;">L'</div>
+                    <div style="font-size: 1.1em; color: #654321; font-weight: bold; text-align: center; line-height: 1.1; font-family: sans-serif;">
+                        LIMYE'<br>FOUNDATION
+                    </div>
+                    <div style="position: absolute; top: -5px; right: -5px; width: 20px; height: 20px; background: radial-gradient(circle, #fff8dc, #f4e4c1); border-radius: 50%; opacity: 0.8;"></div>
+                    <div style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); width: 80px; height: 2px; background: linear-gradient(90deg, transparent, #8b4513, transparent); opacity: 0.6;"></div>
+                </div>
+            </div>
+            <div class="foundation-name">Limye' Foundation</div>
+            <div class="tagline">Illuminating Pathways to Community Prosperity</div>
+            <div style="text-align: center; margin-top: 40px;">
+                <p style="font-size: 1.2em; color: #7f8c8d; margin-bottom: 10px;"><strong>Partnership Proposal</strong></p>
+                <p style="font-size: 1em; color: #95a5a6;">New Heights Community Resource Center</p>
+                <p style="font-size: 0.9em; color: #bdc3c7; margin-top: 20px;">Founded by Quincy Ruffin | Serving Tuscaloosa & West Alabama</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 2: Mission Alignment -->
+    <div class="slide" id="slide-1">
+        <div class="slide-content">
+            <h2>Shared Vision, Shared Impact</h2>
+            <p style="font-size: 1.3em; text-align: center; color: #7f8c8d; margin-bottom: 40px;">
+                "Like a porch light that guides travelers home, we illuminate pathways to health, dignity, and opportunity."
+            </p>
+            
+            <div class="alignment-grid">
+                <div class="alignment-card">
+                    <h4>🏠 New Heights Mission</h4>
+                    <p>Provides wrap-around services through partnerships with local nonprofits to support TCS students, families, and the broader Tuscaloosa community with education, homelessness prevention, youth services, mental health, and healthcare.</p>
+                </div>
+                
+                <div class="alignment-card">
+                    <h4>💡 Limye' Foundation Mission</h4>
+                    <p>Addresses critical, interconnected health and social needs through integrated services supporting individuals and families across the lifespan with housing assistance, transportation support, and nutrition programs.</p>
+                </div>
+            </div>
+            
+            <div style="background: #e8f6f3; padding: 30px; border-radius: 15px; text-align: center; margin-top: 30px;">
+                <h3 style="color: #27ae60; margin-top: 0;">Perfect Partnership Alignment</h3>
+                <p style="font-size: 1.1em; color: #2c3e50;">Both organizations believe in <strong>integrated, community-driven solutions</strong> that address root causes rather than symptoms, empowering families to thrive through coordinated support services.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 3: Three Pillars -->
+    <div class="slide" id="slide-2">
+        <div class="slide-content">
+            <h2>Our Three Pillars of Community Support</h2>
+            <p style="text-align: center; margin-bottom: 40px; font-size: 1.1em; color: #7f8c8d;">
+                Comprehensive services that directly complement New Heights' existing partner network
+            </p>
+            
+            <div class="pillars">
+                <div class="pillar">
+                    <span class="pillar-icon">🏠</span>
+                    <h3>Stable Housing</h3>
+                    <p>Supportive housing solutions combining safe, affordable housing with wrap-around services including case management, healthcare access, mental health support, and life skills training.</p>
+                    <div style="margin-top: 20px; padding: 15px; background: rgba(255,255,255,0.1); border-radius: 10px;">
+                        <strong>Aligns with:</strong> New Heights' homelessness prevention focus
+                    </div>
+                </div>
+                
+                <div class="pillar">
+                    <span class="pillar-icon">🚐</span>
+                    <h3>Transportation Access</h3>
+                    <p>Facilitated Non-Emergency Medical Transportation (NEMT) service providing "white-glove" assistance to remove barriers to healthcare, education, employment, and essential services.</p>
+                    <div style="margin-top: 20px; padding: 15px; background: rgba(255,255,255,0.1); border-radius: 10px;">
+                        <strong>Fills Gap:</strong> Transportation services not currently offered at New Heights
+                    </div>
+                </div>
+                
+                <div class="pillar">
+                    <span class="pillar-icon">🍽️</span>
+                    <h3>Nutrition Security</h3>
+                    <p>Medically Tailored Meals (MTM) program providing home delivery of customized nutrition for individuals with chronic conditions, food insecurity, and special dietary needs.</p>
+                    <div style="margin-top: 20px; padding: 15px; background: rgba(255,255,255,0.1); border-radius: 10px;">
+                        <strong>Enhances:</strong> New Heights' food distribution through West Alabama Food Bank
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 4: Community Need & Impact -->
+    <div class="slide" id="slide-3">
+        <div class="slide-content">
+            <h2>Addressing Critical Community Needs</h2>
+            
+            <div class="stats">
+                <div class="stat">
+                    <span class="stat-number">23%</span>
+                    <span class="stat-label">Diabetes rate in some West Alabama counties - among nation's highest</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">17%</span>
+                    <span class="stat-label">Of adults facing food insecurity</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">23%</span>
+                    <span class="stat-label">Of children lacking regular access to nutritious food</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">5,000+</span>
+                    <span class="stat-label">Projected individuals served annually by Year 3</span>
+                </div>
+            </div>
+            
+            <div style="background: #fff3cd; border: 2px solid #ffeaa7; padding: 30px; border-radius: 15px; margin: 30px 0;">
+                <h3 style="color: #856404; margin-top: 0; text-align: center;">The Interconnected Crisis</h3>
+                <p style="color: #856404; text-align: center;">Transportation barriers prevent access to healthcare and nutritious food. Food insecurity worsens chronic conditions. Housing instability makes disease management nearly impossible. <strong>Our integrated approach breaks these vicious cycles.</strong></p>
+            </div>
+            
+            <div style="background: #d1ecf1; padding: 25px; border-radius: 15px; text-align: center;">
+                <h3 style="color: #0c5460; margin-top: 0;">Theory of Change</h3>
+                <p style="color: #0c5460; font-size: 1.1em; margin: 0;">
+                    <strong>Meeting Immediate Needs → Building Stability → Creating Opportunities → Achieving Transformation</strong>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 5: Partnership Benefits -->
+    <div class="slide" id="slide-4">
+        <div class="slide-content">
+            <h2>Partnership Benefits for New Heights</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; margin: 30px 0;">
+                <div style="background: #f8f9fa; padding: 25px; border-radius: 15px; border-left: 5px solid #28a745;">
+                    <h4 style="color: #28a745; margin-top: 0;">🤝 Service Integration</h4>
+                    <p>Seamless referrals between New Heights partners and Limye' programs, creating a true "one-stop shop" for families</p>
+                </div>
+                
+                <div style="background: #f8f9fa; padding: 25px; border-radius: 15px; border-left: 5px solid #17a2b8;">
+                    <h4 style="color: #17a2b8; margin-top: 0;">🚀 Expanded Capacity</h4>
+                    <p>Additional services (transportation, specialized nutrition) without New Heights bearing operational costs</p>
+                </div>
+                
+                <div style="background: #f8f9fa; padding: 25px; border-radius: 15px; border-left: 5px solid #ffc107;">
+                    <h4 style="color: #e67e22; margin-top: 0;">📊 Shared Data & Outcomes</h4>
+                    <p>Collaborative tracking of family outcomes across multiple service areas for enhanced impact measurement</p>
+                </div>
+                
+                <div style="background: #f8f9fa; padding: 25px; border-radius: 15px; border-left: 5px solid #dc3545;">
+                    <h4 style="color: #dc3545; margin-top: 0;">💰 Resource Optimization</h4>
+                    <p>Shared infrastructure costs, joint funding opportunities, and enhanced community visibility</p>
+                </div>
+            </div>
+            
+            <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 30px;">
+                <h3 style="color: white; margin-top: 0;">Operational Synergies</h3>
+                <p style="margin: 0; font-size: 1.1em;">Our coordinated care teams, warm handoff protocols, and integrated data systems eliminate service gaps and reduce client burden while maximizing both organizations' impact.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 6: Implementation Plan -->
+    <div class="slide" id="slide-5">
+        <div class="slide-content">
+            <h2>Partnership Implementation Plan</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin: 30px 0;">
+                <div style="background: #e8f5e8; padding: 25px; border-radius: 15px;">
+                    <h4 style="color: #2e7d2e; margin-top: 0;">Phase 1: Foundation (Months 1-6)</h4>
+                    <ul style="color: #2e7d2e;">
+                        <li>Secure dedicated office space at New Heights</li>
+                        <li>Finalize 501(c)(3) nonprofit status</li>
+                        <li>Establish referral protocols with existing partners</li>
+                        <li>Launch pilot transportation services</li>
+                    </ul>
+                </div>
+                
+                <div style="background: #e8f2ff; padding: 25px; border-radius: 15px;">
+                    <h4 style="color: #1a5490; margin-top: 0;">Phase 2: Integration (Months 7-12)</h4>
+                    <ul style="color: #1a5490;">
+                        <li>Full NEMT service launch</li>
+                        <li>Begin medically tailored meals program</li>
+                        <li>Integrate data systems for coordinated care</li>
+                        <li>Joint staff training and service coordination</li>
+                    </ul>
+                </div>
+                
+                <div style="background: #fff5e6; padding: 25px; border-radius: 15px;">
+                    <h4 style="color: #cc6600; margin-top: 0;">Phase 3: Expansion (Year 2+)</h4>
+                    <ul style="color: #cc6600;">
+                        <li>Launch supportive housing initiatives</li>
+                        <li>Expand services to surrounding counties</li>
+                        <li>Joint fundraising and grant applications</li>
+                        <li>Community impact measurement and reporting</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="background: #f1f3f4; padding: 25px; border-radius: 15px; text-align: center;">
+                <h3 style="color: #2c3e50; margin-top: 0;">Why Office Space at New Heights is Critical</h3>
+                <p style="color: #2c3e50; margin-bottom: 20px; font-weight: 500;">Co-location with New Heights partners allows us to coordinate directly, cut barriers for families, and amplify community impact.</p>
+                <h4 style="color: #2c3e50; margin: 20px 0 15px 0;">Space Requirements: 800-1,200 sq ft</h4>
+                <div style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 15px;">
+                    <span style="background: white; padding: 10px 20px; border-radius: 25px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">Executive Office</span>
+                    <span style="background: white; padding: 10px 20px; border-radius: 25px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">Case Management</span>
+                    <span style="background: white; padding: 10px 20px; border-radius: 25px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">Client Meeting Rooms</span>
+                    <span style="background: white; padding: 10px 20px; border-radius: 25px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">Administrative Space</span>
+                </div>
+            </div>
+            
+            <div style="background: #e8f5e8; padding: 20px; border-radius: 15px; text-align: center; margin-top: 20px; border-left: 5px solid #28a745;">
+                <h4 style="color: #2e7d2e; margin-top: 0;">Nonprofit Status Update</h4>
+                <p style="color: #2e7d2e; margin: 0;">Limye' Foundation is in the final stages of 501(c)(3) approval. Filing has been submitted and is currently pending. We are fully operational in the meantime and actively building programs and partnerships.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 7: Contact -->
+    <div class="slide" id="slide-6">
+        <div class="slide-content">
+            <h2>Ready to Transform Lives Together</h2>
+            
+            <div style="text-align: center; margin-bottom: 40px;">
+                <p style="font-size: 1.3em; color: #7f8c8d; margin-bottom: 20px;">
+                    "Like porch lights that pierce the darkness across West Alabama each evening, together we can provide steady, reliable illumination that helps our community find their way home."
+                </p>
+            </div>
+            
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                <p style="margin: 10px 0; font-size: 1.1em;"><strong>Quincy Ruffin</strong>, Founder</p>
+                <p style="margin: 10px 0;">📧 <a href="mailto:QRuffin@limyefoundation.org" style="color:white;">QRuffin@limyefoundation.org</a></p>
+                <p style="margin: 10px 0;">📞 <a href="tel:205-393-7396" style="color:white;">205-393-7396</a></p>
+                <p style="margin: 10px 0;">🌐 <a href="https://limyefoundation.org" target="_blank" style="color:white;">limyefoundation.org</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function scrollToSlide(index) {
+            const slide = document.getElementById(`slide-${index}`);
+            slide.scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // Intersection Observer for animations + nav dot sync
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.nav-dot');
+        const observerOptions = { threshold: 0.5 };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Fade/slide in
+                    entry.target.classList.add('visible');
+                    
+                    // Update nav dots
+                    const index = Array.from(slides).indexOf(entry.target);
+                    dots.forEach((dot, i) => {
+                        dot.classList.toggle('active', i === index);
+                    });
+                }
+            });
+        }, observerOptions);
+        
+        slides.forEach(slide => observer.observe(slide));
+    </script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+# Dependencies & Runtime
+node_modules/
+.venv/
+__pycache__/
+
+# Cloudflare & Tool Caches
+.wrangler/
+.DS_Store
+Thumbs.db
+.~lock.*

@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porch Light Foundation - Partnership Proposal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .slide {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin: 30px 0;
+            padding: 50px;
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: slideIn 0.6s ease-out forwards;
+        }
+
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .slide:nth-child(even) {
+            animation-delay: 0.2s;
+        }
+
+        .slide:nth-child(odd) {
+            animation-delay: 0.4s;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            color: #34495e;
+            margin-bottom: 20px;
+        }
+
+        .hero-text {
+            font-size: 1.3rem;
+            text-align: center;
+            color: #555;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+            transform: scale(1);
+            transition: transform 0.3s ease;
+        }
+
+        .highlight-box:hover {
+            transform: scale(1.02);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            transform: translateY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-top: 10px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .service-card {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .alignment-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin: 30px 0;
+        }
+
+        .alignment-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 5px solid #667eea;
+        }
+
+        .timeline {
+            position: relative;
+            margin: 40px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, #667eea, #764ba2);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin: 40px 0;
+        }
+
+        .timeline-item:nth-child(odd) {
+            text-align: right;
+            padding-right: 55%;
+        }
+
+        .timeline-item:nth-child(even) {
+            text-align: left;
+            padding-left: 55%;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #667eea;
+            border-radius: 50%;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .contact-info h3 {
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .contact-detail {
+            font-size: 1.2rem;
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 25px;
+            border: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            margin: 20px 10px;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: #667eea;
+        }
+
+        @media (max-width: 768px) {
+            .slide {
+                padding: 30px;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .alignment-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline::before {
+                left: 20px;
+            }
+            
+            .timeline-item {
+                padding-left: 50px;
+                padding-right: 0;
+                text-align: left;
+            }
+            
+            .timeline-item::before {
+                left: 20px;
+                transform: translateX(-50%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Slide 1: Title -->
+        <div class="slide">
+            <div style="text-align: center; margin-bottom: 40px;">
+                <div style="display: inline-block; position: relative; margin-bottom: 30px;">
+                    <div style="position: relative; width: 200px; height: 200px; margin: 0 auto;">
+                        <!-- Sunburst rays -->
+                        <svg width="200" height="200" viewBox="0 0 200 200" style="position: absolute; top: 0; left: 0;">
+                            <g transform="translate(100,100)">
+                                <!-- Long rays -->
+                                <line x1="0" y1="-80" x2="0" y2="-60" stroke="#d4720a" stroke-width="3" opacity="0.8"/>
+                                <line x1="0" y1="80" x2="0" y2="60" stroke="#d4720a" stroke-width="3" opacity="0.8"/>
+                                <line x1="80" y1="0" x2="60" y2="0" stroke="#d4720a" stroke-width="3" opacity="0.8"/>
+                                <line x1="-80" y1="0" x2="-60" y2="0" stroke="#d4720a" stroke-width="3" opacity="0.8"/>
+                                
+                                <!-- Diagonal long rays -->
+                                <line x1="56.56" y1="-56.56" x2="42.42" y2="-42.42" stroke="#d4720a" stroke-width="3" opacity="0.8"/>
+                                <line x1="-56.56" y1="56.56" x2="-42.42" y2="42.42" stroke="#d4720a" stroke-width="3" opacity="0.8"/>
+                                <line x1="56.56" y1="56.56" x2="42.42" y2="42.42" stroke="#d4720a" stroke-width="3" opacity="0.8"/>
+                                <line x1="-56.56" y1="-56.56" x2="-42.42" y2="-42.42" stroke="#d4720a" stroke-width="3" opacity="0.8"/>
+                                
+                                <!-- Medium rays -->
+                                <line x1="24" y1="-74" x2="18" y2="-55" stroke="#e69138" stroke-width="2" opacity="0.7"/>
+                                <line x1="-24" y1="74" x2="-18" y2="55" stroke="#e69138" stroke-width="2" opacity="0.7"/>
+                                <line x1="74" y1="24" x2="55" y2="18" stroke="#e69138" stroke-width="2" opacity="0.7"/>
+                                <line x1="-74" y1="-24" x2="-55" y2="-18" stroke="#e69138" stroke-width="2" opacity="0.7"/>
+                                <line x1="24" y1="74" x2="18" y2="55" stroke="#e69138" stroke-width="2" opacity="0.7"/>
+                                <line x1="-24" y1="-74" x2="-18" y2="-55" stroke="#e69138" stroke-width="2" opacity="0.7"/>
+                                <line x1="74" y1="-24" x2="55" y2="-18" stroke="#e69138" stroke-width="2" opacity="0.7"/>
+                                <line x1="-74" y1="24" x2="-55" y2="18" stroke="#e69138" stroke-width="2" opacity="0.7"/>
+                                
+                                <!-- Short rays -->
+                                <line x1="12" y1="-76" x2="9" y2="-57" stroke="#f4b366" stroke-width="1.5" opacity="0.6"/>
+                                <line x1="-12" y1="76" x2="-9" y2="57" stroke="#f4b366" stroke-width="1.5" opacity="0.6"/>
+                                <line x1="76" y1="12" x2="57" y2="9" stroke="#f4b366" stroke-width="1.5" opacity="0.6"/>
+                                <line x1="-76" y1="-12" x2="-57" y2="-9" stroke="#f4b366" stroke-width="1.5" opacity="0.6"/>
+                                <line x1="12" y1="76" x2="9" y2="57" stroke="#f4b366" stroke-width="1.5" opacity="0.6"/>
+                                <line x1="-12" y1="-76" x2="-9" y2="-57" stroke="#f4b366" stroke-width="1.5" opacity="0.6"/>
+                                <line x1="76" y1="-12" x2="57" y2="-9" stroke="#f4b366" stroke-width="1.5" opacity="0.6"/>
+                                <line x1="-76" y1="12" x2="-57" y2="9" stroke="#f4b366" stroke-width="1.5" opacity="0.6"/>
+                                
+                                <!-- Additional medium rays -->
+                                <line x1="36" y1="-68" x2="27" y2="-51" stroke="#e69138" stroke-width="2" opacity="0.7"/>
+                                <line x1="-36" y1="68" x2="-27" y2="51" stroke="#e69138" stroke-width="2" opacity="0.7"/>
+                                <line x1="68" y1="36" x2="51" y2="27" stroke="#e69138" stroke-width="2" opacity="0.7"/>
+                                <line x1="-68" y1="-36" x2="-51" y2="-27" stroke="#e69138" stroke-width="2" opacity="0.7"/>
+                                <line x1="36" y1="68" x2="27" y2="51" stroke="#e69138" stroke-width="2" opacity="0.7"/>
+                                <line x1="-36" y1="-68" x2="-27" y2="-51" stroke="#e69138" stroke-width="2" opacity="0.7"/>
+                                <line x1="68" y1="-36" x2="51" y2="-27" stroke="#e69138" stroke-width="2" opacity="0.7"/>
+                                <line x1="-68" y1="36" x2="-51" y2="27" stroke="#e69138" stroke-width="2" opacity="0.7"/>
+                            </g>
+                        </svg>
+                        
+                        <!-- Lantern -->
+                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 60px; height: 80px;">
+                            <svg width="60" height="80" viewBox="0 0 60 80">
+                                <!-- Lantern top -->
+                                <ellipse cx="30" cy="8" rx="8" ry="4" fill="#3d2914"/>
+                                <rect x="28" y="2" width="4" height="8" fill="#3d2914"/>
+                                <ellipse cx="30" cy="2" rx="2" ry="2" fill="#3d2914"/>
+                                
+                                <!-- Lantern body -->
+                                <path d="M15 12 Q15 8 30 8 Q45 8 45 12 L45 55 Q45 62 30 62 Q15 62 15 55 Z" fill="#3d2914"/>
+                                
+                                <!-- Lantern glass panels -->
+                                <path d="M20 15 L20 50 Q20 55 30 55 Q40 55 40 50 L40 15 Q40 12 30 12 Q20 12 20 15 Z" fill="#fff5e6" opacity="0.9"/>
+                                
+                                <!-- Lantern light glow -->
+                                <ellipse cx="30" cy="35" rx="15" ry="20" fill="#fff5e6" opacity="0.8"/>
+                                <ellipse cx="30" cy="35" rx="10" ry="15" fill="#ffffff" opacity="0.6"/>
+                                
+                                <!-- Lantern frame -->
+                                <path d="M20 15 L20 50 Q20 55 30 55 Q40 55 40 50 L40 15 Q40 12 30 12 Q20 12 20 15 Z" fill="none" stroke="#3d2914" stroke-width="2"/>
+                                <line x1="30" y1="12" x2="30" y2="55" stroke="#3d2914" stroke-width="1.5"/>
+                                <line x1="20" y1="35" x2="40" y2="35" stroke="#3d2914" stroke-width="1"/>
+                                
+                                <!-- Lantern bottom -->
+                                <ellipse cx="30" cy="62" rx="8" ry="4" fill="#3d2914"/>
+                                <rect x="28" y="62" width="4" height="6" fill="#3d2914"/>
+                                <ellipse cx="30" cy="68" rx="2" ry="2" fill="#3d2914"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 20px;">
+                    <h1 style="font-size: 3rem; font-weight: bold; color: #3d2914; margin-bottom: 10px;">PORCH LIGHT</h1>
+                    <div style="font-size: 1.2rem; color: #3d2914; letter-spacing: 3px; font-weight: 500;">NONPROFIT</div>
+                </div>
+            </div>
+            
+            <div class="hero-text">
+                Partnership Proposal for New Heights Community Resource Center
+            </div>
+            <div class="highlight-box">
+                <h3>Comprehensive Community Health & Social Services Hub</h3>
+                <p>Addressing critical interconnected needs through integrated services in Tuscaloosa, Alabama</p>
+            </div>
+        </div>
+
+        <!-- Slide 2: Mission Alignment -->
+        <div class="slide">
+            <h2>Perfect Mission Alignment</h2>
+            <div class="alignment-grid">
+                <div class="alignment-card">
+                    <h3>🎯 New Heights Mission</h3>
+                    <p>One-stop wrap-around service center for TCS students, families, and the greater Tuscaloosa community</p>
+                </div>
+                <div class="alignment-card">
+                    <h3>🏮 Porch Light Mission</h3>
+                    <p>Addresses critical, interconnected health and social needs through deeply integrated, multi-pillar services across the lifespan</p>
+                </div>
+            </div>
+            <div class="highlight-box">
+                <h3>Shared Vision: Comprehensive Community Support</h3>
+                <p>Both organizations focus on wrap-around services, family support, and addressing systemic barriers to health and wellbeing</p>
+            </div>
+        </div>
+
+        <!-- Slide 3: Our Services -->
+        <div class="slide">
+            <h2>Comprehensive Service Portfolio</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="icon">🚗</div>
+                    <h3>Porch Light Rides</h3>
+                    <p>Non-Emergency Medical Transportation (NEMT) with white-glove assistance for elderly and pregnant women</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">🍽️</div>
+                    <h3>Porch Light Plates</h3>
+                    <p>Medically Tailored Meals (MTM) with dietitian oversight for clients with chronic conditions</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">🏠</div>
+                    <h3>Porch Light Homes</h3>
+                    <p>Supportive housing initiative partnering with local housing authorities</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">👶</div>
+                    <h3>Doula Program</h3>
+                    <p>Community-based maternal health support throughout pregnancy and beyond</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">💼</div>
+                    <h3>Workforce Development</h3>
+                    <p>Integrated employment services and financial empowerment programs</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">🏥</div>
+                    <h3>Community Health Integration</h3>
+                    <p>Community Health Worker services with Medicare billing capabilities</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Value Proposition -->
+        <div class="slide">
+            <h2>What We Bring to New Heights</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">500+</span>
+                    <div class="stat-label">Clients Served Year 1</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">$1.15M</span>
+                    <div class="stat-label">Revenue by Year 3</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">10,000+</span>
+                    <div class="stat-label">Meals Delivered Annually</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">25+</span>
+                    <div class="stat-label">Community Partnerships</div>
+                </div>
+            </div>
+            <div class="highlight-box">
+                <h3>🚀 Innovative Revenue Model</h3>
+                <p>Hybrid nonprofit/for-profit structure with for-profit subsidiaries funding nonprofit activities - creating sustainability while maintaining mission focus</p>
+            </div>
+        </div>
+
+        <!-- Slide 5: Perfect Complement -->
+        <div class="slide">
+            <h2>Complementing Existing Partners</h2>
+            <div class="alignment-grid">
+                <div class="alignment-card">
+                    <h3>🔗 Enhances Current Services</h3>
+                    <p><strong>Transportation:</strong> Connects clients to services offered by all 12 existing partners</p>
+                    <p><strong>Nutrition:</strong> Complements health services with medically tailored meals</p>
+                    <p><strong>Housing:</strong> Addresses housing insecurity for vulnerable families</p>
+                </div>
+                <div class="alignment-card">
+                    <h3>🤝 Strengthens Partnership Network</h3>
+                    <p><strong>Five Horizons Health:</strong> Direct referral pathway for medical transportation</p>
+                    <p><strong>Disability Rights & Resources:</strong> Specialized accessible transportation</p>
+                    <p><strong>Parents as Teachers:</strong> Doula program collaboration</p>
+                </div>
+            </div>
+            <div class="highlight-box">
+                <h3>No Service Duplication - Pure Enhancement</h3>
+                <p>We fill critical gaps in transportation, nutrition, and housing that enable access to all other services</p>
+            </div>
+        </div>
+
+        <!-- Slide 6: Space & Resource Needs -->
+        <div class="slide">
+            <h2>Space & Resource Requirements</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="icon">🏢</div>
+                    <h3>Office Space</h3>
+                    <p>2-3 private offices for staff</p>
+                    <p>Open workspace for Community Health Workers</p>
+                    <p>Conference room access for client meetings</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">🍳</div>
+                    <h3>Kitchen Access</h3>
+                    <p>Commercial kitchen for meal preparation</p>
+                    <p>Storage for meal delivery supplies</p>
+                    <p>Refrigeration for medically tailored meals</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">📞</div>
+                    <h3>Shared Resources</h3>
+                    <p>Reception/dispatch services</p>
+                    <p>Parking for delivery vehicles</p>
+                    <p>Shared meeting spaces</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: Financial Model -->
+        <div class="slide">
+            <h2>Sustainable Financial Model</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">Medicare</span>
+                    <div class="stat-label">SDOH Billing Codes</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">Medicaid</span>
+                    <div class="stat-label">NEMT & Meal Reimbursement</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">Insurance</span>
+                    <div class="stat-label">Commission Revenue</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">Grants</span>
+                    <div class="stat-label">Federal & State Funding</div>
+                </div>
+            </div>
+            <div class="highlight-box">
+                <h3>💰 Revenue Sharing Potential</h3>
+                <p>Established revenue streams allow for potential rent payments and resource sharing agreements that benefit the entire New Heights community</p>
+            </div>
+        </div>
+
+        <!-- Slide 8: Implementation Timeline -->
+        <div class="slide">
+            <h2>Implementation Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>Month 1-3: Partnership Formation</h3>
+                    <p>Finalize space agreements, complete legal structure, begin staff hiring</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Month 4-6: Infrastructure Setup</h3>
+                    <p>Install technology systems, complete kitchen setup, hire Community Health Workers</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Month 7-9: Program Launch</h3>
+                    <p>Begin NEMT services, start meal delivery program, launch doula services</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Month 10-12: Full Operations</h3>
+                    <p>Complete service integration, establish partner referral systems, achieve sustainability</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: Community Impact -->
+        <div class="slide">
+            <h2>Expected Community Impact</h2>
+            <div class="alignment-grid">
+                <div class="alignment-card">
+                    <h3>🎯 Direct Impact</h3>
+                    <p><strong>Health Outcomes:</strong> 80% of clients show improved health outcomes</p>
+                    <p><strong>Housing Stability:</strong> 50+ housing placements annually</p>
+                    <p><strong>Food Security:</strong> 10,000+ medically tailored meals delivered</p>
+                </div>
+                <div class="alignment-card">
+                    <h3>🌐 Systemic Impact</h3>
+                    <p><strong>Healthcare Access:</strong> Reduced missed appointments through reliable transportation</p>
+                    <p><strong>Family Stability:</strong> Comprehensive support reduces crisis interventions</p>
+                    <p><strong>Economic Mobility:</strong> Workforce development creates pathways out of poverty</p>
+                </div>
+            </div>
+            <div class="highlight-box">
+                <h3>Amplifying New Heights' Impact</h3>
+                <p>By removing transportation, nutrition, and housing barriers, we enable greater utilization of all services offered at New Heights</p>
+            </div>
+        </div>
+
+        <!-- Slide 10: Call to Action -->
+        <div class="slide">
+            <h2>Let's Build Something Amazing Together</h2>
+            <div class="hero-text">
+                Porch Light Foundation is ready to become the 13th partner at New Heights Community Resource Center, bringing comprehensive services that enhance and amplify the incredible work already happening.
+            </div>
+            
+            <div class="contact-info">
+                <h3>Ready to Discuss Partnership</h3>
+                <div class="contact-detail">
+                    <span>📧</span> Contact: [Your Contact Information]
+                </div>
+                <div class="contact-detail">
+                    <span>📍</span> Serving: Tuscaloosa County and West Alabama
+                </div>
+                <div class="contact-detail">
+                    <span>🎯</span> Mission: Integrated community health and social services
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="#" class="cta-button">Schedule a Meeting</a>
+                <a href="#" class="cta-button">Request Detailed Proposal</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simple scroll-triggered animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationDelay = '0s';
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.slide').forEach(slide => {
+            observer.observe(slide);
+        });
+
+        // Add hover effects for interactive elements
+        document.querySelectorAll('.service-card, .stat-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-5px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
