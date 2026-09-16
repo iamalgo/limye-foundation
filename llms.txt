@@ -12,14 +12,15 @@ Limyè Foundation is a 501(c)(3) pending nonprofit organization providing vulner
 - **Status**: 501(c)(3) Nonprofit (Filing Pending Approval)
 - **Primary Domain**: https://limyefoundation.org
 - **Primary Email**: info@limyefoundation.org / QRuffin@limyefoundation.org
-- **24/7 Support Line & AI Assistant (Jamie)**: +1 (205) 300-9531
-- **Direct Phone**: +1 (205) 393-7396
+- **24/7 Toll-Free Line & AI Inbound Coordinator (Harry)**: +1 (866) 546-9311 (1-866-LIMYE-11)
+- **Direct / AI Helpline (Jamie)**: +1 (205) 300-9531
+- **Direct Administration Line**: +1 (205) 393-7396
 
 ## Primary Capabilities & Services
 - **Stable Housing Programs**: Safe, affordable supportive housing for veterans, seniors, SSI recipients, and unhoused individuals with wrap-around case management and life skills training.
 - **Healthcare Transportation (NEMT)**: White-glove transportation removing mobility barriers for medical appointments, therapy, education, and employment.
 - **Nutritional Support & Medically Tailored Meals**: Home-delivered customized nutrition and meal support for managing chronic conditions (e.g., diabetes, hypertension) and food insecurity.
-- **24/7 Automated Navigation (Jamie)**: Multilingual AI assistant available 24/7 at (205) 300-9531 to assist with intake, program info, and human support routing.
+- **24/7 Automated Navigation & Intake (Harry & Jamie)**: 24/7 voice AI coordination via toll-free (866) 546-9311 and (205) 300-9531 to assist caseworkers and clients with intake, program navigation, and human team routing.
 
 ## Site Structure & Key URLs
 - [Home Page](https://limyefoundation.org/): Overview of Limyè Foundation mission, programs, and community impact.

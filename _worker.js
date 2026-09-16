@@ -813,7 +813,117 @@ ${transcript}
 }
 
 // ─────────────────────────────────────────────────────────────
-// 7. Cloudflare Worker Entry Point
+// 7. Telnyx Voice & AI Assistant Webhook (/api/telnyx/voice-webhook)
+// ─────────────────────────────────────────────────────────────
+
+async function handleTelnyxVoiceWebhook(request, env, ctx) {
+    try {
+        let callerPhone = 'Unknown Caller';
+        let durationSec = 0;
+        let recordingUrl = null;
+        let transcript = 'No transcript captured';
+        let summary = 'Telnyx Voice AI session completed';
+        let callSid = 'unknown';
+
+        const contentType = request.headers.get('content-type') || '';
+
+        if (contentType.includes('application/json')) {
+            const body = await request.json();
+            const payload = body.data?.payload || body.payload || body;
+            callerPhone = payload.from || payload.caller_phone || 'Unknown Caller';
+            durationSec = payload.duration_secs || payload.call_duration || 0;
+            recordingUrl = payload.recording_url || null;
+            transcript = payload.transcription_text || payload.transcript || summary;
+            summary = payload.summary || summary;
+            callSid = payload.call_control_id || payload.call_sid || body.data?.id || 'unknown';
+        } else {
+            // Form URL Encoded (standard TeXML callback)
+            const formData = await request.formData();
+            callerPhone = formData.get('From') || formData.get('Caller') || 'Unknown Caller';
+            durationSec = parseFloat(formData.get('CallDuration') || '0');
+            recordingUrl = formData.get('RecordingUrl') || null;
+            transcript = formData.get('TranscriptionText') || formData.get('Transcript') || 'Call session completed';
+            summary = formData.get('Summary') || `Inbound call completed via Harry (Duration: ${durationSec}s)`;
+            callSid = formData.get('CallSid') || 'unknown';
+        }
+
+        const voiceChatterNote = `
+        <div style="font-family: Arial, sans-serif; padding: 4px;">
+            <div style="background-color: #f0fdf4; border-left: 4px solid #16a34a; padding: 12px 16px; margin-bottom: 8px; border-radius: 4px;">
+                <h4 style="color: #166534; margin: 0 0 6px 0; font-size: 13px;">🎙️ Harry AI Call Session &bull; Telnyx Telephony Report</h4>
+                <p style="font-size: 12px; margin: 0 0 6px 0; color: #475569;">
+                    <b>Caller:</b> ${callerPhone} | <b>Duration:</b> ${Math.round(durationSec)}s | <b>Toll-Free Line:</b> 1-866-546-9311 (1-866-LIMYE-11)
+                </p>
+                <p style="font-size: 11px; margin: 0 0 6px 0; color: #64748b;"><b>Assistant:</b> Harry (Limyè Foundation Inbound Coordinator) | <b>Call SID:</b> <code>${callSid}</code></p>
+                ${recordingUrl ? `<p style="margin: 0 0 8px 0;"><a href="${recordingUrl}" target="_blank" style="color: #16a34a; font-size: 12px; font-weight: bold;">▶ Listen to Audio Recording</a></p>` : ''}
+                
+                <div style="margin-bottom: 10px;">
+                    <p style="font-size: 11px; font-weight: bold; color: #166534; margin: 0 0 4px 0;">Call Summary:</p>
+                    <div style="font-size: 12px; line-height: 1.5; color: #1e293b; background: #ffffff; padding: 8px 12px; border-radius: 4px; border: 1px solid #bbf7d0;">
+                        ${summary}
+                    </div>
+                </div>
+
+                <div>
+                    <p style="font-size: 11px; font-weight: bold; color: #475569; margin: 0 0 4px 0;">Conversation Record / Transcript:</p>
+                    <div style="font-size: 11px; line-height: 1.5; color: #334155; background: #ffffff; padding: 8px 12px; border-radius: 4px; border: 1px solid #e2e8f0; max-height: 250px; overflow-y: auto; white-space: pre-wrap;">
+${transcript}
+                    </div>
+                </div>
+            </div>
+        </div>`;
+
+        // 1. Email Team Alert
+        const emailPromise = sendTelnyxEmail(env, {
+            to: DEFAULT_ALERT_RECIPIENTS,
+            subject: `[Harry AI Call] Toll-Free Intake Call from ${callerPhone}`,
+            text: `Harry AI toll-free call from ${callerPhone} (1-866-546-9311):\n\nSummary:\n${summary}\n\nTranscript:\n${transcript}`,
+            html: `
+                <div style="font-family: Arial, sans-serif; padding: 16px;">
+                    <h3 style="color: #16a34a; margin-top: 0;">Limyè Foundation &bull; Harry AI Call Completed</h3>
+                    <p><b>Caller Phone:</b> ${callerPhone}</p>
+                    <p><b>Toll-Free Number:</b> 1-866-546-9311 (1-866-LIMYE-11)</p>
+                    <p><b>Call Duration:</b> ${Math.round(durationSec)} seconds</p>
+                    ${recordingUrl ? `<p><a href="${recordingUrl}">Listen to Audio Recording</a></p>` : ''}
+                    <div style="background: #f8fafc; padding: 12px; border-radius: 6px; border: 1px solid #e2e8f0; margin-top: 12px;">
+                        <h4>Summary:</h4>
+                        <p>${summary}</p>
+                        <h4>Transcript:</h4>
+                        <pre style="white-space: pre-wrap; font-size: 11px;">${transcript}</pre>
+                    </div>
+                </div>
+            `,
+            fromName: 'Harry AI Intake Coordinator'
+        });
+
+        // 2. Sync to Odoo CRM & Chatter
+        const odooPromise = syncToOdooLead(env, {
+            name: `Harry AI Call - ${callerPhone}`,
+            partnerName: false,
+            contactName: `Caller (${callerPhone})`,
+            email: 'info@limyefoundation.org',
+            phone: callerPhone,
+            description: `Telnyx Toll-Free Call with Harry (1-866-546-9311 / 1-866-LIMYE-11):\nDuration: ${Math.round(durationSec)}s\nSummary: ${summary}\n\nTranscript:\n${transcript}`,
+            expectedRevenue: 0,
+            chatterNote: voiceChatterNote
+        });
+
+        if (ctx && typeof ctx.waitUntil === 'function') {
+            ctx.waitUntil(Promise.allSettled([emailPromise, odooPromise]));
+        } else {
+            await emailPromise;
+            try { await odooPromise; } catch (e) { console.warn('[Odoo Voice Sync Warning]', e.message); }
+        }
+
+        return jsonResponse({ status: 'voice_call_logged' });
+    } catch (err) {
+        console.error('Telnyx Voice Webhook error:', err);
+        return jsonResponse({ error: err.message }, 500);
+    }
+}
+
+// ─────────────────────────────────────────────────────────────
+// 8. Cloudflare Worker Entry Point
 // ─────────────────────────────────────────────────────────────
 
 export default {
@@ -822,7 +932,7 @@ export default {
 
         // 1. Handle CORS Preflight
         if (request.method === 'OPTIONS') {
-            const apiRoutes = ['/api/contact', '/api/sms', '/api/telnyx/webhook', '/api/vapi/webhook', '/api/submit-housing-form', '/api/submit-contact-form', '/api/subscribe-newsletter'];
+            const apiRoutes = ['/api/contact', '/api/sms', '/api/telnyx/webhook', '/api/telnyx/voice-webhook', '/api/vapi/webhook', '/api/submit-housing-form', '/api/submit-contact-form', '/api/subscribe-newsletter'];
             if (apiRoutes.includes(url.pathname)) {
                 return new Response(null, { status: 204, headers: CORS_HEADERS });
             }
@@ -846,6 +956,10 @@ export default {
 
         if (request.method === 'POST' && url.pathname === '/api/telnyx/webhook') {
             return handleTelnyxWebhook(request, env, ctx);
+        }
+
+        if (request.method === 'POST' && url.pathname === '/api/telnyx/voice-webhook') {
+            return handleTelnyxVoiceWebhook(request, env, ctx);
         }
 
         if (request.method === 'POST' && url.pathname === '/api/vapi/webhook') {
