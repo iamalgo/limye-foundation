@@ -1,0 +1,7 @@
+# robots.txt for Limyè Foundation
+User-agent: *
+Allow: /
+
+# Sitemaps and AI Discovery
+Sitemap: https://www.limyefoundation.org/sitemap.xml
+Disallow: /api/
