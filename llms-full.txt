@@ -52,11 +52,44 @@ By delivering three interconnected pillars of support—**Housing**, **Transport
 
 ---
 
-## 24/7 AI Voice Navigation & Intake - Harry & Jamie
+## 24/7 AI Voice Navigation, Telephony & Fanvil Desk Phone Integration
 Limyè Foundation provides 24/7 automated assistance for caseworkers, healthcare partners, and community members:
 - **Toll-Free Intake Line (Harry)**: **1-866-546-9311 (1-866-LIMYE-11)**
 - **Direct / AI Helpline (Jamie)**: **(205) 300-9531**
 - **Key Functions**: Takes structured intake for supportive housing, medical transit, and nutrition assistance 24/7; provides program information; and routes urgent inquiries to our field operations team.
+
+### Telephony Routing Architecture & Anti-Spam IVR Gate
+1. **Screening IVR Menu**:
+   - Inbound calls to `1-866-546-9311` are screened by an edge TeXML IVR (`https://www.limyefoundation.org/api/texml/inbound`):
+     - Press 1: Case Worker / Social Worker / Agency Partner (`[LMY-Agency]`)
+     - Press 2: Direct Housing, Nutrition, or Community Assistance (`[LMY-Intake]`)
+     - Press 3: Landlord, Donor, or Community Partner (`[LMY-Partner]`)
+     - Press 4: General Administration or Executive Management (`[LMY-Admin]`)
+   - Silent robocalls and automated web scrapers are automatically disconnected after 7 seconds ($0 AI minutes consumed).
+2. **Fanvil V67 Handset Bridging**:
+   - Verified human callers immediately ring the Fanvil V67 desk phone (`sip:limyefoundation@sip.telnyx.com`) for 15 seconds (~3 rings).
+3. **Harry AI Fallback**:
+   - If the call is unanswered after 15 seconds (or line is busy), TeXML connects the caller directly to Harry AI (`assistant-daa8fc21-90e1-44f7-8702-cad5e6587128`).
+4. **CRM Synchronization**:
+   - Transcripts, audio recordings, and intake summaries are automatically pushed to Odoo 18 Chatter (`res.partner` and `crm.lead` under Company ID 5) and emailed to `info@limyefoundation.org` and `qruffin@limyefoundation.org`.
+
+### Fanvil V67 Desk Phone SIP Line Configuration (Line 4 / SIP6)
+- **Line Status**: Active / Enabled
+- **Line / Position**: Line 4 (or SIP6)
+- **Display Name**: `Limye Foundation`
+- **Username / Register Name**: `limyefoundation`
+- **Authentication User**: `limyefoundation`
+- **Authentication Password**: `Salesman2@`
+- **Server Name**: `[Leave Blank]`
+- **Realm**: `[Leave Blank]`
+- **SIP Server 1 Address**: `sip.telnyx.com`
+- **SIP Server 1 Port**: `5060` (Transport: UDP)
+- **Registration Expiration**: `300` seconds
+- **Proxy Server Address**: `sip.telnyx.com`
+- **Proxy Server Port**: `5060`
+- **Telnyx Credential Connection ID**: `3049893998228407414`
+- **Outbound Caller ID (ANI)**: `+18665469311` (1-866-546-9311 / 1-866-LIMYE-11)
+
 
 ---
 
