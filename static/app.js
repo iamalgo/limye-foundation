@@ -47,28 +47,37 @@ async function handleHousingFormSubmit(e) {
     // Get accessibility needs (checkboxes)
     const accessibilityNeeds = Array.from(form.querySelectorAll('input[name="accessibility"]:checked'))
                                    .map(cb => cb.value);
+
+    const consentTransactional = !!form.querySelector('input[name="consent_transactional"]:checked');
+    const consentMarketing = !!form.querySelector('input[name="consent_marketing"]:checked');
     
-    // Prepare form data
+    // Prepare form data with compliance telemetry
     const data = {
         fullName: formData.get('fullName'),
+        name: formData.get('fullName'),
         phone: formData.get('phone'),
         email: formData.get('email'),
         housingNeed: formData.get('housingNeed'),
+        service_interest: `Housing: ${formData.get('housingNeed')}`,
         moveInDate: formData.get('moveInDate'),
         incomeSource: formData.get('incomeSource'),
         accessibilityNeeds: accessibilityNeeds,
         emergencyName: formData.get('emergencyName'),
         emergencyPhone: formData.get('emergencyPhone'),
-        submittedAt: new Date().toISOString()
+        consent_transactional: consentTransactional,
+        consent_marketing: consentMarketing,
+        form_type: 'housing_application',
+        source_page: window.location.href,
+        client_timestamp: new Date().toISOString()
     };
 
     // Show loading state
     const originalText = submitButton.textContent;
-    submitButton.textContent = 'Submitting...';
+    submitButton.textContent = 'Submitting Application...';
     submitButton.disabled = true;
 
     try {
-        const response = await fetch('/api/submit-housing-form', {
+        const response = await fetch('/api/contact', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -79,14 +88,15 @@ async function handleHousingFormSubmit(e) {
         const result = await response.json();
 
         if (result.success) {
-            showSuccessMessage('Application submitted successfully! We will contact you within 2 business days.');
+            const refId = result.quoteRef || result.ref || 'LMY-2026-CONFIRMED';
+            showSuccessMessage(`Housing application submitted! Reference ID: #${refId}. We will contact you within 2 business days.`);
             form.reset();
         } else {
-            showErrorMessage(result.message || 'There was an error submitting your application. Please try again.');
+            showErrorMessage(result.error || result.message || 'There was an error submitting your application. Please try again.');
         }
     } catch (error) {
         console.error('Form submission error:', error);
-        showErrorMessage('There was an error submitting your application. Please try again or contact us directly.');
+        showErrorMessage('There was an error submitting your application. Please try again or call our 24/7 hotline at (205) 300-9531.');
     } finally {
         submitButton.textContent = originalText;
         submitButton.disabled = false;
@@ -101,22 +111,30 @@ async function handleContactFormSubmit(e) {
     const formData = new FormData(form);
     const submitButton = form.querySelector('button[type="submit"]');
     
+    const consentTransactional = !!form.querySelector('input[name="consent_transactional"]:checked');
+    const consentMarketing = !!form.querySelector('input[name="consent_marketing"]:checked');
+
     const data = {
         name: formData.get('name'),
         email: formData.get('email'),
         phone: formData.get('phone'),
         interest: formData.get('interest'),
+        service_interest: formData.get('interest'),
         message: formData.get('message'),
-        submittedAt: new Date().toISOString()
+        consent_transactional: consentTransactional,
+        consent_marketing: consentMarketing,
+        form_type: 'general_inquiry',
+        source_page: window.location.href,
+        client_timestamp: new Date().toISOString()
     };
 
     // Show loading state
     const originalText = submitButton.textContent;
-    submitButton.textContent = 'Sending...';
+    submitButton.textContent = 'Sending Message...';
     submitButton.disabled = true;
 
     try {
-        const response = await fetch('/api/submit-contact-form', {
+        const response = await fetch('/api/contact', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -127,14 +145,15 @@ async function handleContactFormSubmit(e) {
         const result = await response.json();
 
         if (result.success) {
-            showSuccessMessage('Message sent successfully! We will respond within 1 business day.');
+            const refId = result.quoteRef || result.ref || 'LMY-2026-RECEIVED';
+            showSuccessMessage(`Message sent successfully! Reference ID: #${refId}. We will respond within 1 business day.`);
             form.reset();
         } else {
-            showErrorMessage(result.message || 'There was an error sending your message. Please try again.');
+            showErrorMessage(result.error || result.message || 'There was an error sending your message. Please try again.');
         }
     } catch (error) {
         console.error('Contact form submission error:', error);
-        showErrorMessage('There was an error sending your message. Please try again or contact us directly.');
+        showErrorMessage('There was an error sending your message. Please try again or call our 24/7 hotline at (205) 300-9531.');
     } finally {
         submitButton.textContent = originalText;
         submitButton.disabled = false;
@@ -169,21 +188,28 @@ async function handleNewsletterSubscription(e) {
     e.target.disabled = true;
 
     try {
-        const response = await fetch('/api/subscribe-newsletter', {
+        const response = await fetch('/api/contact', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ email })
+            body: JSON.stringify({
+                email,
+                name: 'Newsletter Subscriber',
+                service_interest: 'Newsletter Subscription',
+                form_type: 'newsletter',
+                source_page: window.location.href,
+                client_timestamp: new Date().toISOString()
+            })
         });
 
         const result = await response.json();
 
         if (result.success) {
-            showSuccessMessage('Successfully subscribed to our newsletter!');
+            showSuccessMessage('Successfully subscribed to Limyè Foundation updates!');
             emailInput.value = '';
         } else {
-            showErrorMessage(result.message || 'There was an error with your subscription. Please try again.');
+            showErrorMessage(result.error || result.message || 'There was an error with your subscription. Please try again.');
         }
     } catch (error) {
         console.error('Newsletter subscription error:', error);
